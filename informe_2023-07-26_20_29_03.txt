@@ -1,4 +1,0 @@
----------------CARPETAAS--ELIMINADAS-------------------
-./.git\objects\info
-./.git\objects\pack
-./.git\refs\tags
