@@ -1,13 +1,16 @@
 from random import randint
 from string import ascii_lowercase
 """
-* Funcionamiento
-* Comandos
-* -l : genera contraseña con longitud entre 8 a 16 caracteres
-* -s : contiene simbolos
-* -m : contiene mayuscula
-* -n : contiene numeros 
-* Ejemplos
+* Password Generator Script
+*
+* 
+* Commands
+* -l : generate a password between 16 and 8 characters
+* -s : contains symbols
+* -m : contains mayus
+* -n : contains numbers
+
+* Examples 
 * generate-password -l -s 
 * generate-password -l 
 * generate-password -l -s -m 
@@ -29,9 +32,11 @@ def generatePassword(configs: list):
     LETTERS = list(ascii_lowercase)
     SYMBOLS = list(map(chr, range(33, 47)))
     NUMBERS = [x for x in range(11)]
+    MAYUS = False
+    
     config_loaded = [LETTERS]
     long = int(randint(5, 11))
-    MAYUS = False
+    
     # load configs add
     if configs.count('-n') != 0:
         config_loaded.append(NUMBERS)
@@ -44,7 +49,7 @@ def generatePassword(configs: list):
 
     if configs.count('-m') != 0:
         MAYUS = True
-    # PASO A CREAR LA CONTRASEÑA
+
     passwod = ""
     for i in range(0, long):
         r = randint(0, len(config_loaded)-1)
