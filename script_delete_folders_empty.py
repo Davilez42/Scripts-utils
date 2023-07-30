@@ -2,7 +2,6 @@ from os import walk,remove,removedirs,system
 import datetime
 import time 
 
-
 def generarInforme(texto):
     print('[+] Terminado. Deseas guardar un informe ? (s/n)::',end=" ")
     while True:
@@ -20,6 +19,7 @@ def generarInforme(texto):
             elif dec == 'n' or dec == 'N':
                 break     
             print('Porfavor ingrese una opcion correcta.. ')    
+   
             
 def eliminarCarpetas():
     cnt_vacias = 0
@@ -33,6 +33,8 @@ def eliminarCarpetas():
     system('cls')
     print(f'Total Carpetas eliminadas:{cnt_vacias}')       
     generarInforme(text)           
+  
+  
                              
 if __name__ == '__main__':
     eliminarCarpetas()
